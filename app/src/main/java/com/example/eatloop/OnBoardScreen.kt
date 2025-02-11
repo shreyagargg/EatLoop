@@ -1,7 +1,48 @@
 package com.example.eatloop
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+//import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.eatloop.ui.theme.EatloopTheme
+//import android.os.Bundle
+//import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.*
 import androidx.compose.animation.core.animateFloatAsState
@@ -14,24 +55,27 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
-import androidx.compose.ui.graphics.Color
+//import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
+//import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-class OnboardScreen : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            OnboardingActivity()
-        }
-    }
-}
+
+
+//class OnboardScreen : ComponentActivity() {
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContent {
+//            OnboardingActivity()
+//        }
+//    }
+//}
 
 @OptIn(ExperimentalAnimationApi::class)
+@Preview(showBackground = true)
 @Composable
 fun OnboardingActivity() {
     var currentIndex by remember { mutableStateOf(0) }
@@ -129,21 +173,21 @@ val onboardingItems = listOf(
     OnboardingItem(
         "Find and Get Your Best Food",
         "Find the most delicious food and have it delivered to your home.",
-        R.drawable.cake // Replace with actual drawable
+        R.drawable.mic // Replace with actual drawable
     ),
     OnboardingItem(
         "Build Your Order",
         "Select your preferred restaurant and manage your order.",
-        R.drawable.cake
+        R.drawable.mic
     ),
     OnboardingItem(
         "24/7 Customer Support",
         "Enjoy dedicated support for your queries anytime, anywhere.",
-        R.drawable.cake
+        R.drawable.mic
     ),
     OnboardingItem(
         "Customize Your Order",
         "Choose your preferred style and taste. Special, or normal.",
-        R.drawable.cake
+        R.drawable.mic
     )
 )

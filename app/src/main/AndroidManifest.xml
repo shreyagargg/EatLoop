@@ -13,16 +13,26 @@
         android:theme="@style/Theme.Eatloop"
         tools:targetApi="31">
         <activity
-            android:name=".OnboardScreen"
+            android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Eatloop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LoginSignupScreen"
+            android:exported="false"
+            android:theme="@style/Theme.Eatloop"/>
+        <activity
+            android:name=".SplashScreen"
+            android:exported="false"
+            android:theme="@style/Theme.Eatloop"/>
+<!--        <activity-->
+<!--            android:name=".OnboardScreen"-->
+<!--            android:exported="false"-->
+<!--            android:theme="@style/Theme.Eatloop"/>-->
     </application>
 
 </manifest>
