@@ -37,20 +37,20 @@ import com.example.eatloop.ui.theme.EatloopTheme
 import kotlinx.coroutines.delay
 
 
-class SplashScreen : ComponentActivity() {
-    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            EatloopTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) {
-//                    Navigation()
-                }
-            }
-        }
-    }
-}
+//class SplashScreen : ComponentActivity() {
+//    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        enableEdgeToEdge()
+//        setContent {
+//            EatloopTheme {
+//                Scaffold(modifier = Modifier.fillMaxSize()) {
+////                    Navigation()
+//                }
+//            }
+//        }
+//    }
+//}
 
 //@Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -69,48 +69,19 @@ fun Splash(navController: NavController) {
             color = Color(0xff333333),
             modifier = Modifier.padding(10.dp)
         )
-//        Text(
-//            text = "Translate your text in any language",
-//            fontSize = 15.sp,
-//            fontWeight = FontWeight.Normal,
-//            color = Color(0xff333333),
-//            modifier = Modifier.padding(10.dp)
-//        )
         Image(
             painter = painterResource(id = R.drawable.eatloop_logo),
             contentDescription = "Logo",
             modifier = Modifier.padding(10.dp).size(200.dp)
         )
-//        Button(
-//            onClick = {
-//                Toast.makeText(context, "Continue", Toast.LENGTH_SHORT).show()
-////            navController.navigate("main")
-//            },
-//            colors = androidx.compose.material3.ButtonDefaults.buttonColors(
-//                containerColor = Color(0xffff6f61)
-//            ),
-//            modifier = Modifier.padding(50.dp)
-//        ) {
-//            Text(text = "Continue", fontSize = 20.sp, fontWeight = FontWeight.Normal)
-//        }
-    }
 
-    LaunchedEffect(key1 = true) {
-        delay(3000) // Delay for 3 seconds
-////        val intent = Intent(context, LoginSignupScreen::class.java)
-////        context.startActivity(intent)
-////        startActivity(Intent(this@SplashScreen, LoginSignupScreen::class.java))
-        navController.navigate("main") {
-            popUpTo("splash") { inclusive = true } // Prevents going back to splash screen
+        LaunchedEffect(key1 = true) {
+            delay(3000) // Delay for 3 seconds
+            navController.navigate("main") {
+                popUpTo("splash") { inclusive = true } // Prevents going back to splash screen
+            }
         }
     }
+
+
 }
-
-
-
-
-//@Preview(showBackground = true, showSystemUi = true)
-//@Composable
-//fun Navigation() {
-//    Splash(navController = rememberNavController())
-//}
