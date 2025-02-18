@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">eatloop</string>
+    <string name="app_name">EatLoop</string>
+    <string name="text">Information about product - The bright orange cat leaped gracefully over the fence,
+        chasing butterflies as the sun set behind the hills.</string>
 </resources>
