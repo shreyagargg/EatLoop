@@ -29,31 +29,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-//@Composable
-//fun Splash(navController: NavHostController) {
-//    // Your splash screen logic goes here
-//    // Navigate to the next screen after some time
-//    navController.navigate("main") {
-//        popUpTo("splash") { inclusive = true } // This ensures you pop the splash screen after navigating
-//    }
-//}
-//
-//@Composable
-//fun OnBoard(navController: NavHostController) {
-//    // Your onboarding logic goes here
-//    // After finishing onboarding, navigate to login or another screen
-//    // navController.navigate("login")
-//}
-//
-//@Composable
-//fun Login(navController: NavHostController) {
-//    // Your login logic goes here
-//    // After successful login, navigate to the next screen
-//    // navController.navigate("pass")
-//}
-//
-//@Composable
-//fun ans() {
-//    // Your 'ans' screen logic goes here
-//}
