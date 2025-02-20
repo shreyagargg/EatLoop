@@ -22,7 +22,8 @@ class MainActivity : ComponentActivity() {
                 NavHost(navController = navController, startDestination = "splash") {
                     composable("splash") { Splash(navController = navController) } // Pass NavController here
                     composable("main") { OnboardingActivity(navController = navController) }
-                    composable("login") { Login(navController = navController) }
+                    composable("login") { Layout(navController = navController) }
+//                    composable("login") { Login(navController = navController) }
                     composable("pass") { ans() } // Include any other screen here
                 }
             }

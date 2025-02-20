@@ -32,16 +32,16 @@ class LoginSignupScreen : ComponentActivity() {
         setContent(){
             EatloopTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) {
-                    Layout()
+//                    Layout()
                 }
             }
         }
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+//@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun Layout() {
+fun Layout(navController: NavController) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -87,64 +87,110 @@ fun Layout() {
                         )
                     }
                 }
-                val navController = rememberNavController()
+//                val navController = rememberNavController()
 
                 // Content for selected tab
                 when (selectedTabIndex.value) {
-                    0 -> Login(navController)
+                    0 -> {
+//                        Login(navController)
+                        var mail by remember {mutableStateOf("")}
+                        var pass by remember {mutableStateOf("")}
+                        Column(
+                            modifier = Modifier.padding(10.dp)
+                        ){
+                            TextField(
+                                value = mail,
+                                onValueChange = { mail = it },
+                                textStyle = TextStyle(color = Color.Black, fontSize = 20.sp),
+                                placeholder = { Text(text = "E-mail or Phone")},
+                                modifier = Modifier
+                                    .padding(10.dp)
+                                    .fillMaxWidth()
+                            )
+                            TextField(
+                                value = pass,
+                                onValueChange = { pass = it },
+                                textStyle = TextStyle(color = Color.Black, fontSize = 20.sp),
+                                placeholder = { Text(text = "Password")},
+                                modifier = Modifier
+                                    .padding(10.dp)
+                                    .fillMaxWidth()
+                            )
+                            TextButton(
+                                modifier = Modifier.align(Alignment.End)
+                                ,onClick = { navController.navigate("pass") }) {
+                                Text(text = "Forget Password ?", fontSize = 18.sp, fontWeight = FontWeight.Normal,
+                                    color = Color.Black)
+                            }
+                            Button(
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = Color(0xff5db760)
+                                )
+                                ,onClick = { },
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .align(Alignment.CenterHorizontally)
+                                    .padding(20.dp),
+                                shape = CutCornerShape(5.dp)
+                            ) {
+                                Text(text = "Login", fontSize = 25.sp, fontWeight = FontWeight.Normal)
+
+                            }
+                        }
+                    }
                     1 -> Signup()
                 }
             }
         }
     }}
 
-@Composable
-fun Login(navController : NavController){
-    var mail by remember {mutableStateOf("")}
-    var pass by remember {mutableStateOf("")}
-    Column(
-        modifier = Modifier.padding(10.dp)
-    ){
-        TextField(
-            value = mail,
-            onValueChange = { mail = it },
-            textStyle = TextStyle(color = Color.Black, fontSize = 20.sp),
-            placeholder = { Text(text = "E-mail or Phone")},
-            modifier = Modifier
-                .padding(10.dp)
-                .fillMaxWidth()
-        )
-        TextField(
-            value = pass,
-            onValueChange = { pass = it },
-            textStyle = TextStyle(color = Color.Black, fontSize = 20.sp),
-            placeholder = { Text(text = "Password")},
-            modifier = Modifier
-                .padding(10.dp)
-                .fillMaxWidth()
-        )
-        TextButton(
-            modifier = Modifier.align(Alignment.End)
-            ,onClick = { navController.navigate("pass") }) {
-            Text(text = "Forget Password ?", fontSize = 18.sp, fontWeight = FontWeight.Normal,
-                color = Color.Black)
-        }
-        Button(
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xff5db760)
-            )
-            ,onClick = { },
-            modifier = Modifier
-                .fillMaxWidth()
-                .align(Alignment.CenterHorizontally)
-                .padding(20.dp),
-            shape = CutCornerShape(5.dp)
-        ) {
-            Text(text = "Login", fontSize = 25.sp, fontWeight = FontWeight.Normal)
-
-        }
-    }
-}
+//@Composable
+//fun Login(navController : NavController){
+//    var mail by remember {mutableStateOf("")}
+//    var pass by remember {mutableStateOf("")}
+//    Column(
+//        modifier = Modifier.padding(10.dp)
+//    ){
+//        TextField(
+//            value = mail,
+//            onValueChange = { mail = it },
+//            textStyle = TextStyle(color = Color.Black, fontSize = 20.sp),
+//            placeholder = { Text(text = "E-mail or Phone")},
+//            modifier = Modifier
+//                .padding(10.dp)
+//                .fillMaxWidth()
+//        )
+//        TextField(
+//            value = pass,
+//            onValueChange = { pass = it },
+//            textStyle = TextStyle(color = Color.Black, fontSize = 20.sp),
+//            placeholder = { Text(text = "Password")},
+//            modifier = Modifier
+//                .padding(10.dp)
+//                .fillMaxWidth()
+//        )
+//        TextButton(
+//            modifier = Modifier.align(Alignment.End)
+//            ,onClick = { navController.navigate("pass") }) {
+//            Text(text = "Forget Password ?", fontSize = 18.sp, fontWeight = FontWeight.Normal,
+//                color = Color.Black)
+//        }
+//        Button(
+//            colors = ButtonDefaults.buttonColors(
+//                containerColor = Color(0xff5db760)
+//            )
+//            ,onClick = { },
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .align(Alignment.CenterHorizontally)
+//                .padding(20.dp),
+//            shape = CutCornerShape(5.dp)
+//        ) {
+//            Text(text = "Login", fontSize = 25.sp, fontWeight = FontWeight.Normal)
+//
+//        }
+//    }
+//}
 
 
 @Composable

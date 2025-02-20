@@ -25,6 +25,10 @@
             android:name=".LoginSignupScreen"
             android:exported="false"
             android:theme="@style/Theme.Eatloop"/>
+        <activity
+            android:name=".ForgetPasswordScreen"
+            android:exported="false"
+            android:theme="@style/Theme.Eatloop"/>
 <!--        <activity-->
 <!--            android:name=".SplashScreen"-->
 <!--            android:exported="false"-->
