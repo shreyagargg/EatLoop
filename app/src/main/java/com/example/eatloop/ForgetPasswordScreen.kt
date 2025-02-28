@@ -42,6 +42,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+
 //import com.example.first.ui.theme.FirstTheme
 
 class ForgetPasswordScreen : ComponentActivity() {
@@ -59,42 +61,14 @@ class ForgetPasswordScreen : ComponentActivity() {
         }
     }
 }
-@Preview(showBackground = true, showSystemUi = true)
+//@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun ans(){
-//    LayoutUI("Forgot Password ?", "Me shreya")
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .padding(16.dp)
-            .fillMaxWidth()
-    ) {
-        Image(
-            painter = painterResource(id = R.drawable.eatloop_logo),
-            contentDescription = "Logo",
-            modifier = Modifier.padding(10.dp)
-        )
-        Text(
-            text = "heading", color = Color(0xff5db760),
-            fontSize = 35.sp, fontWeight = FontWeight.ExtraBold,
-            modifier = Modifier.padding(1.dp)
-        )
-        Text(
-            text = "subheading", color = Color.Black,
-            fontSize = 20.sp, fontWeight = FontWeight.Normal,
-            modifier = Modifier
-                .padding(5.dp)
-                .align(Alignment.CenterHorizontally)
-        )
-    }
+fun ForgetPassword(navController: NavController){
+    Column() {
+        LayoutUI("Forgot Password ?", "Me shreya")
+
     var context = LocalContext.current
-    Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.Start,
-        modifier = Modifier
-            .padding(10.dp)
-            .fillMaxSize()
-    ) {
+
         Text(
             text = "Enter e-mail id or Mobile number", color = Color.Black,
             fontSize = 20.sp, fontWeight = FontWeight.Normal, fontFamily = FontFamily.Default,
@@ -115,7 +89,9 @@ fun ans(){
             colors = androidx.compose.material3.ButtonDefaults.buttonColors(
                 containerColor = Color(0xff5db760)
             ),
-            onClick = { Toast.makeText(context, "OTP sent", Toast.LENGTH_SHORT).show() },
+            onClick = { Toast.makeText(context, "OTP sent", Toast.LENGTH_SHORT).show()
+                navController.navigate("otp")
+                      },
             modifier = Modifier.align(Alignment.CenterHorizontally))
         { Text(text = "Send OTP") }
     }

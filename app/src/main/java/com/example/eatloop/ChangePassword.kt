@@ -27,26 +27,27 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.eatloop.ui.theme.EatloopTheme
 
-class ChangePassword  : ComponentActivity(){
-    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent(){
-            EatloopTheme {
-                Scaffold(modifier = androidx.compose.ui.Modifier.fillMaxSize()) {
-                    pass()
-                }
-            }
-        }
-    }
-}
+//class ChangePassword  : ComponentActivity(){
+//    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        enableEdgeToEdge()
+//        setContent(){
+//            EatloopTheme {
+//                Scaffold(modifier = androidx.compose.ui.Modifier.fillMaxSize()) {
+//                    pass()
+//                }
+//            }
+//        }
+//    }
+//}
 
-@Preview(showBackground = true, showSystemUi = true)
+//@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun pass(){
+fun ChangePassword(navController: NavController){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = androidx.compose.ui.Modifier
@@ -83,7 +84,7 @@ fun pass(){
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xff5db760)
             )
-            ,onClick = { },
+            ,onClick = { navController.navigate("pass_change") },
             modifier = androidx.compose.ui.Modifier
                 .fillMaxWidth()
                 .align(Alignment.CenterHorizontally)

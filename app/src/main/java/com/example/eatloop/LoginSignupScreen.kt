@@ -41,7 +41,7 @@ class LoginSignupScreen : ComponentActivity() {
 
 //@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun Layout(navController: NavController) {
+fun LoginSigup(navController: NavController) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -118,7 +118,7 @@ fun Layout(navController: NavController) {
                             )
                             TextButton(
                                 modifier = Modifier.align(Alignment.End)
-                                ,onClick = { navController.navigate("pass") }) {
+                                ,onClick = { navController.navigate("forget_pass") }) {
                                 Text(text = "Forget Password ?", fontSize = 18.sp, fontWeight = FontWeight.Normal,
                                     color = Color.Black)
                             }

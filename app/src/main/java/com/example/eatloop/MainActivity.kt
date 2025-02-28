@@ -18,13 +18,15 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             EatloopTheme {
-                val navController = rememberNavController() // NavController should be created here
+                val navController = rememberNavController()
                 NavHost(navController = navController, startDestination = "splash") {
-                    composable("splash") { Splash(navController = navController) } // Pass NavController here
+                    composable("splash") { Splash(navController = navController) }
                     composable("main") { OnboardingActivity(navController = navController) }
-                    composable("login") { Layout(navController = navController) }
-//                    composable("login") { Login(navController = navController) }
-                    composable("pass") { ans() } // Include any other screen here
+                    composable("login") { LoginSigup(navController = navController) }
+                    composable("forget_pass") { ForgetPassword(navController = navController) }
+                    composable("otp") { OTP(navController = navController) }
+                    composable("new_pass") { ChangePassword(navController = navController) }
+                    composable("pass_change") { PasswordChanged() }
                 }
             }
         }
